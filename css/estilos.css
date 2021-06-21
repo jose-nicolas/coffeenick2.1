@@ -1,0 +1,509 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+	font-family: "Open Sans", Arial, Sans-serif;
+	font-size: 20px;
+}
+
+.contenedor{
+	width: 90%;
+	max-width: 1000px;
+	margin: auto;
+	overflow: hidden;
+}
+
+/*--------------- HEADER -----------------*/
+
+header{
+	width:100%;
+	background: url('../img/bg.jpg') #281a0c;
+	background-size: cover;
+	background-attachment: fixed;
+	background-position: center 0;
+}
+
+header .contenedor{
+	position: relative;
+	height: 800px;
+}
+
+header .menu{
+	width: 100%;
+	text-align: right;
+}
+
+header .menu a{
+	color: #f0620f;
+	font-size: 22px;
+	font-weight: 600;
+	display: inline-block;
+	margin: 40px 20px;
+	text-decoration:  none;
+	position: relative;/*para que el menu aparezca de arriba  abajo con jquery*/	
+}
+
+header .menu a:hover{
+	text-decoration: underline;
+}
+
+
+header .textos{
+	text-align: center;
+	width: 50%;
+	color: rgb(79, 206, 238);
+	position: absolute;/*con jquery se traba efecto paralax*/
+	top: 35%;
+	margin-top: -52px;	
+	
+}
+
+header .textos .nombre{
+	font-size: 110px;
+	font-weight: 800;
+	color: rgb(216, 230, 24);
+	width: 20%;
+}
+
+header .textos .nombre span{
+
+	font-weight: 800;
+	color: rgb(255, 115, 0);
+	width: 20%;
+}
+
+header .textos h3{
+	font-weight: 300;
+	font-size: 25px;
+	font-style: italic;
+}
+
+/*------------- MAIN ------------------------*/
+
+
+
+/* -------------main de la parte aserca de-------------*/ 
+.main .acerca-de .contenedor{
+	overflow: visible;/*para que el contenido sobrante se vea*/
+	position: relative;/*porque lo queremos modificar*/
+	color: rgb(218, 224, 226);
+}
+
+/*como el contenedor tiene posicion relativa y la foto absoluta entonces
+podemos colocar la foto en una posicion apartir del contenedor*/
+.main .acerca-de .foto{
+	width: 90%;
+	position: absolute;/*porque la foto esta mas arriba del fondo*/
+	left: 0;
+	top: -50px;
+	z-index: 0;/*para que la foto para por debajo del texto*/
+	box-shadow: 0px 0px 15px 0px rgba(19, 214, 78, 0.911);
+}
+
+.main .acerca-de .foto img {
+	vertical-align: top;
+	width: 100%;/*100 % del contenedor*/
+}
+.main .acerca-de article{
+	background: rgba(72, 82, 15, 0.849);
+	padding: 23px;
+	width: 50%;
+	position: relative;/*para manipular la info de acerca de*/
+	top: 500px;/*lo bajamos porque con parallax va a subir*/
+	z-index: 1;/*que el article este arriba de la foto*/
+	box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.35);
+	float: right;
+}
+.main .acerca-de article h3{
+	font-size: 80px;
+	font-weight: 300;
+	margin-bottom: 40px;
+}
+
+.main .acerca-de article p{
+	line-height: 28px; /*para que haya espacio entre lineas*/
+	margin-bottom: 15px;
+}
+
+/* -------------productos-------------*/ 
+.main .menu {
+	padding-top: 550px;
+	margin-bottom: 10px;
+	color: rgb(60, 208, 235);
+}
+
+.main .menu .titulo{
+	font-size: 80px;
+	font-weight: 800;
+	text-align: center;
+	margin-bottom: 5px;
+	color: rgb(60, 208, 235);
+}
+
+.main .menu .contenedor-menu,
+.main .menu .contenedor-menu2{
+	border: 5px solid rgb(191, 194, 196);
+	background:transparent;/*para pponer un contenedor dentro de otro*/
+	padding: 1px;
+	overflow: hidden;	
+}
+
+.main .menu article{
+	width: 60%;
+	float: left;
+	padding: 20px;
+}
+
+.main .menu .categoria{
+	font-size: 22px;
+	font-weight: 700;
+	margin-bottom: 40px;
+	text-align: center;
+}
+
+.main .menu .platillo{
+	margin-bottom: 30px;
+	padding-bottom: 20px;
+	border-bottom: 4px dotted rgb(238, 232, 232);
+	overflow: hidden;
+}
+
+.main .menu .nombre{
+	font-size: 20px;
+	margin-bottom: 25px;
+	float: left;
+}
+
+/* -------------Productos-------------*/ 
+
+.main .alta{
+	padding-top: 10px;
+	margin-bottom: 1px;
+	color: rgb(60, 208, 235);
+}
+
+.main .alta .titulo{
+	font-size: 80px;
+	font-weight: 800;
+	text-align: center;
+	margin-bottom: 5px;
+	color: rgb(60, 208, 235);
+}
+
+.main .alta .contenedor-menu,
+.main .alta .contenedor-menu2{
+	border: 5px solid rgb(191, 194, 196);
+	background:transparent;/*para pponer un contenedor dentro de otro*/
+	padding: 1px;
+	overflow: hidden;	
+}
+
+.main .alta article{
+	width: 60%;
+	float: left;
+	padding: 20px;
+}
+
+.main .alta .categoria{
+	font-size: 22px;
+	font-weight: 700;
+	margin-bottom: 40px;
+	text-align: center;
+}
+
+.main .alta .platillo{
+	margin-bottom: 30px;
+	padding-bottom: 20px;
+	border-bottom: 4px dotted rgb(238, 232, 232);
+	overflow: hidden;
+}
+
+.main .alta .nombre{
+	font-size: 20px;
+	margin-bottom: 25px;
+	float: left;
+}
+
+/* -------------Proveedores-------------*/ 
+
+.main .prov{
+	padding-top: 150px;
+	margin-bottom: 10px;
+		color: rgb(60, 208, 235);
+}
+
+.main .prov .titulo{
+	font-size: 80px;
+	font-weight: 800;
+	text-align: center;
+	margin-bottom: 5px;
+	color: rgb(60, 208, 235);
+}
+
+.main .prov .contenedor-menu,
+.main .prov .contenedor-menu2{
+	border: 5px solid rgb(191, 194, 196);
+	background:transparent;/*para pponer un contenedor dentro de otro*/
+	padding: 1px;
+	overflow: hidden;	
+}
+
+.main .prov article{
+	width: 60%;
+	float: left;
+	padding: 20px;
+}
+
+.main .prov .categoria{
+	font-size: 22px;
+	font-weight: 700;
+	margin-bottom: 40px;
+	text-align: center;
+}
+
+.main .prov .platillo{
+	margin-bottom: 30px;
+	padding-bottom: 20px;
+	border-bottom: 4px dotted rgb(238, 232, 232);
+	overflow: hidden;
+}
+
+.main .prov .nombre{
+	font-size: 20px;
+	margin-bottom: 25px;
+	float: left;
+}
+
+/* -------------Ubicacion-------------*/ 
+
+.main .ubicacion{
+	background: rgba(150, 14, 14, 0.808);
+	padding: 60px 0;
+	overflow: hidden;
+}
+
+.main .ubicacion .titulo{
+	text-align: center;
+	font-size: 60px;
+	line-height: 40px;
+	font-weight: 600;
+	margin-bottom: 35px;
+	color:rgb(216, 230, 24)
+}
+
+.main .ubicacion .direccion{
+	float: left;
+	width: 100%;
+	text-align: left;
+}
+
+.main .ubicacion .horarios{
+	float: right;
+	width: 50%;
+	text-align: right;
+	font-size: 26px;
+	overflow: hidden;
+	color: rgb(50, 212, 28);
+}
+
+.main .horarios .entre-semana{
+	margin-bottom: 20px;
+	font-size: 20px;
+	overflow: hidden;
+	color: white;
+	
+}
+
+.main .horarios .fin-semana{
+	color: white;
+}
+
+.main .horarios .youtu{
+	color: white;
+}
+
+.main .ubicacion .direccion .calle{
+	text-align: center;
+	line-height: 40px;
+	font-weight: 600;
+	margin-bottom: 15px;
+	font-size: 26px;
+	color: rgb(50, 212, 28);
+}
+
+.main .ubicacion .direccion .correo2{
+	text-align: center;
+	line-height: 40px;
+	font-weight: 600;
+	margin-bottom: 5px;
+	font-size: 20px;
+	color: white;
+}
+
+.main .ubicacion .direccion .telefono{
+	text-align: center;
+	line-height: 40px;
+	font-weight: 600;
+	margin-bottom: 15px;
+	font-size: 26px;
+	color: rgb(50, 212, 28);
+}
+
+.main .ubicacion .direccion .correo{
+	text-align: center;
+	line-height: 40px;
+	font-weight: 600;
+	margin-bottom: 15px;
+	font-size: 26px;
+	color: white;
+}
+
+.main .ubicacion .direccion .redes{
+	text-align: center;
+	line-height: 40px;
+	font-weight: 600;
+	margin-bottom: 15px;
+	font-size: 26px;
+	color: rgb(50, 212, 28);
+}
+
+.main .ubicacion .horarios h4{
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.main .ubicacion .horarios .entre-semana,
+.main .ubicacion .horarios .fin-semana{
+	width: 50%;
+	float: left;
+	text-align: center;
+}
+
+.main .mapa{
+	width: 100%;
+	overflow: hidden;
+}
+
+.main .mapa iframe{
+	width: 100%;
+	max-height: 600px;
+}
+
+/*------------- FOOTER ----------*/
+
+footer{
+	background: rgba(131, 38, 10, 0.788);
+}
+
+footer .copyright{
+	text-align: center;
+	padding: 15px 0;
+	color: rgb(250, 246, 10);
+}
+
+/*------------------ MEDIA QUERIES------------------*/
+
+@media screen and (max-width: 800px ){
+	header .contenedor{
+		position: static;/*porque cuando es mas chico no queremos efecto paralax*/
+		height: auto;
+	}
+	header .textos{
+		position: static;
+		margin: 100px 0;
+	}
+
+	header .menu{
+		text-align: center;
+	}
+	header .menu a{
+		margin: 10px 20px;
+	}
+
+	header .textos .nombre{
+		font-size: 30px;
+	}
+
+	header .textos .h3{
+		font-size: 18px;
+	}
+
+	.main .acerca-de .foto{
+		width: 100%;
+		position: relative;
+	}
+	.main .acerca-de article{
+		position: relative;
+		width: 100%;		
+		top: -50px;
+		transform: translate(0px,0);/*para quitar transforme*/
+	}
+
+	/*......clientes......*/
+	.main .menu{
+		padding-top: 300px;
+	}
+
+	.main .menu article{
+		width: 100%;
+	}
+
+	/*......productos......*/
+	.main .alta{
+		padding-top: 300px;
+	}
+
+	.main .alta article{
+		width: 100%;
+	}
+
+	/*......proveedores......*/
+	.main .prov{
+		padding-top: 300px;
+	}
+
+	.main .prov article{
+		width: 100%;
+	}
+
+	/*......ubicacion......*/
+	.main .mapa{
+		width: 500%;
+		margin:auto;
+	}
+
+}
+
+@media screen and(max-width: 400px) {
+	.main .acerca-de article h3{
+		font-size: 34px;
+		margin-bottom: 10px;
+	}
+
+    /*......clientes......*/
+	.main .menu article .nombre,
+	.main .menu article .precio{
+		font-size: 16px;
+		line-height: 16px;
+	}
+
+	/*......productos......*/
+	.main .alta article .nombre,
+	.main .alta article .precio{
+		font-size: 16px;
+		line-height: 16px;
+	}
+
+	.main .ubicacion .direccion{
+		margin-bottom: 15px;
+	}
+
+	.main .ubicacion .direccion,
+	.main .ubicacion .horarios{
+		width: 100%;
+		text-align: center;
+	}
+}
